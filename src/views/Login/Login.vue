@@ -9,8 +9,10 @@
       >
         <!-- 左上角的 logo + 系统标题 -->
         <div class="relative flex items-center text-white">
-          <img alt="" class="mr-10px h-48px w-48px" src="@/assets/imgs/logo.png" />
-          <span class="text-20px font-bold">{{ underlineToHump(appStore.getTitle) }}</span>
+          <img alt="" class="mr-15px h-54px w-96px" src="@/assets/imgs/lucy.jpg" />
+          
+          <!-- <span class="text-20px font-bold">{{ underlineToHump(appStore.getTitle) }}</span> -->
+          <div class="text-20px font-bold">{{ underlineToHump('角圆叉方商城系统') }}</div>
         </div>
         <!-- 左边的背景图 + 欢迎语 -->
         <div class="h-[calc(100%-60px)] flex items-center justify-center">
@@ -19,8 +21,8 @@
             enter-active-class="animate__animated animate__bounceInLeft"
             tag="div"
           >
-            <img key="1" alt="" class="w-350px" src="@/assets/svgs/login-box-bg.svg" />
-            <div key="2" class="text-3xl text-white">{{ t('login.welcome') }}</div>
+            <img key="1" alt="" class="w-350px" src="@/assets/svgs/rebbca.jpg" />
+            <div key="2" class="text-3xl text-white">{{ t('welcome to') }}</div>
             <div key="3" class="mt-5 text-14px font-normal text-white">
               {{ t('login.message') }}
             </div>
@@ -36,7 +38,7 @@
           style="color: var(--el-text-color-primary);"
         >
           <div class="flex items-center at-2xl:hidden at-xl:hidden">
-            <img alt="" class="mr-10px h-48px w-48px" src="@/assets/imgs/logo.png" />
+            <img alt="" class="mr-10px h-48px w-48px" src="@/assets/imgs/lucy.jpg" />
             <span class="text-20px font-bold" >{{ underlineToHump(appStore.getTitle) }}</span>
           </div>
           <div class="flex items-center justify-end space-x-10px h-48px">
@@ -99,7 +101,7 @@ $prefix-cls: #{$namespace}-login;
       z-index: -1;
       width: 100%;
       height: 100%;
-      background-image: url('@/assets/svgs/login-bg.svg');
+      background-image: url('@/assets/svgs/astrobot-3.jpeg');
       background-position: center;
       background-repeat: no-repeat;
       content: '';

@@ -3,6 +3,7 @@ import type {ConfigEnv, UserConfig} from 'vite'
 import {loadEnv} from 'vite'
 import {createVitePlugins} from './build/vite'
 import {exclude, include} from "./build/vite/optimize"
+import { defineConfig } from 'vite';
 // 当前执行node命令时文件夹的地址(工作目录)
 const root = process.cwd()
 
@@ -10,6 +11,7 @@ const root = process.cwd()
 function pathResolve(dir: string) {
     return resolve(root, '.', dir)
 }
+
 
 // https://vitejs.dev/config/
 export default ({command, mode}: ConfigEnv): UserConfig => {
@@ -24,19 +26,25 @@ export default ({command, mode}: ConfigEnv): UserConfig => {
         base: env.VITE_BASE_PATH,
         root: root,
         // 服务端渲染
+        // server: {
+        //     port: env.VITE_PORT, // 端口号
+        //     host: "0.0.0.0",
+        //     open: env.VITE_OPEN === 'true',
+        //     // 本地跨域代理. 目前注释的原因：暂时没有用途，server 端已经支持跨域
+        //     // proxy: {
+        //     //   ['/admin-api']: {
+        //     //     target: env.VITE_BASE_URL,
+        //     //     ws: false,
+        //     //     changeOrigin: true,
+        //     //     rewrite: (path) => path.replace(new RegExp(`^/admin-api`), ''),
+        //     //   },
+        //     // },
+        // },
+        // vite.config.js
+
+     
         server: {
-            port: env.VITE_PORT, // 端口号
-            host: "0.0.0.0",
-            open: env.VITE_OPEN === 'true',
-            // 本地跨域代理. 目前注释的原因：暂时没有用途，server 端已经支持跨域
-            // proxy: {
-            //   ['/admin-api']: {
-            //     target: env.VITE_BASE_URL,
-            //     ws: false,
-            //     changeOrigin: true,
-            //     rewrite: (path) => path.replace(new RegExp(`^/admin-api`), ''),
-            //   },
-            // },
+            port: 5000 // 设置为你想要的非特权端口
         },
         // 项目使用的vite插件。 单独提取到build/vite/plugin中管理
         plugins: createVitePlugins(),

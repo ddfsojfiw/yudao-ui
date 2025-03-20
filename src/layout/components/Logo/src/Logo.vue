@@ -67,8 +67,8 @@ watch(
       to="/"
     >
       <img
-        class="h-[calc(var(--logo-height)-10px)] w-[calc(var(--logo-height)-10px)]"
-        src="@/assets/imgs/logo.png"
+        class="h-[calc(var(--logo-height)-16px)] w-[calc(var(--logo-height)-10px)]"
+        src="@/assets/imgs/lucy.jpg"
       />
       <div
         v-if="show"
@@ -81,7 +81,7 @@ watch(
           }
         ]"
       >
-        {{ title }}
+        {{ '...管理系统' }}
       </div>
     </router-link>
   </div>
